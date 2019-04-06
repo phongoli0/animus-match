@@ -1,38 +1,41 @@
 body{
     height: 100vh;
-    background-color: #122b40;
+    background-image: url("images/background.jpg");
 }
 .header{
-    height: 25vh;
-    background-color: darkgrey;
-    display: flex;
-}.logo{
-    height: 15%;
-    width: 15%;
-    background-color: #cd0a0a;
-    position: center;
-     display: flex;
- }
- .bottomArea{
-     background-color: darkmagenta;
-     height: 100vh;
- }
-.gameArea{
-    height: 100%;
-    width: 80%;
-    background-color: tan;
-    display: inline-block;
+    height: 20%;
 }
+.zoom{
+    position: center;
+    display: inline-block;
+    height: 25%;
+    width: 25%;
+}
+ .bottomArea{
+     height: 75%;
+ }
 .gameInfoArea{
     vertical-align: top;
-    background-color: cyan;
     display: inline-block;
     height: 100%;
-    width: 18%;
+    width: 15%;
+}
+.gamesPlayed{
+
+}
+.accuracy{
+
+}
+.attempts{
+
+}
+.gameArea{
+    height: 100%;
+    width: 84%;
+    display: inline-block;
 }
 .cardContainer{
     width: 16.66%;
-    background-color: orange;
     float: left;
     height: 33.33%;
     margin: auto;
@@ -43,20 +46,25 @@ body{
     left: 5%;
     height: 90%;
     width: 90%;
-    background-color: orange;
     position: relative;
 }
 .front, .back{
     height: 100%;
     width: 100%;
     position: absolute;
+    background-repeat: no-repeat;
 }
 .front{
-    background-color: teal;
 }
 .back{
-    background-color: yellow;
+    background-image: url("images/back.jpg");
 }
-.card:hover>.back{
+.hide {
     display: none;
+}
+.imageMod{
+    width:85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
