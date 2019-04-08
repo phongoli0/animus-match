@@ -121,4 +121,3 @@ function resetGame() {
     randomizeAndGenerateCards();
     $('.card').click(cardClicked);
 }
-

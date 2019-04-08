@@ -1,6 +1,8 @@
 body{
     height: 100vh;
     background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .header{
     height: 20%;
@@ -28,12 +30,16 @@ body{
     font-weight: bold;
 }
 .gamesPlayed{
+    font-family: monospace;
+    font-weight: bold;
 }
 .accuracy{
-
+    font-family: monospace;
+    font-weight: bold;
 }
 .attempts{
-
+    font-family: monospace;
+    font-weight: bold;
 }
 .gameArea{
     height: 100%;
@@ -89,10 +95,11 @@ body{
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    font-family: monospace;
 }
-
-.resetButton:hover {background-color: #3e8e41}
-
+.resetButton:hover {
+    background-color: #3e8e41
+}
 .resetButton:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
@@ -102,9 +109,7 @@ body{
     height: 10%;
     width: 10%;
 }
-h2{
-    background-color: #ffffff69;
-}
-h3{
-    background-color: #ffffff69;
+h2,h3,.aboutMe,.aboutGame{
+    background-color: #ffffffb0;
+    max-width: 850px;
 }
