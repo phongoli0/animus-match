@@ -19,9 +19,15 @@ body{
     display: inline-block;
     height: 100%;
     width: 15%;
+    background-color: #ffffff69;
+}
+.gameInfoArea > div{
+    height: 25%;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
 }
 .gamesPlayed{
-
 }
 .accuracy{
 
@@ -52,9 +58,9 @@ body{
     height: 100%;
     width: 100%;
     position: absolute;
-    background-repeat: no-repeat;
 }
 .front{
+
 }
 .back{
     background-image: url("images/back.jpg");
@@ -69,4 +75,36 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.resetButton {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.resetButton:hover {background-color: #3e8e41}
+
+.resetButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.me{
+    height: 10%;
+    width: 10%;
+}
+h2{
+    background-color: #ffffff69;
+}
+h3{
+    background-color: #ffffff69;
 }

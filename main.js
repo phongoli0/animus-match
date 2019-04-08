@@ -25,7 +25,7 @@ function initializeApp() {
     shuffle(images);
     randomizeAndGenerateCards();
     $('.card').click(cardClicked);
-    $('.reset').click(resetGame)
+    $('.resetButton').click(resetGame)
 }
 
 function shuffle(array) {
@@ -59,10 +59,10 @@ function cardClicked() {
     if (can_click_card === false) {
         return;
     }
-    if (first_card_clicked === null) { //this is the first card that was clicked
+    if (first_card_clicked === null) {
         first_card_clicked = $(this);
         first_card_clicked.find('.back').addClass('hide');
-        console.log(first_card_clicked);//assign first card clicked = to the htmlDOM that was clicked
+        console.log(first_card_clicked);
         return
     } else {
         second_card_clicked = $(this);
@@ -116,8 +116,9 @@ function resetStats() {
 function resetGame() {
     gamesPlayed++;
     resetStats();
-    displayStats();
     $('.gameArea').empty();
-    initializeApp();
+    shuffle(images);
+    randomizeAndGenerateCards();
+    $('.card').click(cardClicked);
 }
 
