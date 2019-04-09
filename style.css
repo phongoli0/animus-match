@@ -1,0 +1,115 @@
+body{
+    height: 100vh;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.header{
+    height: 20%;
+}
+.zoom{
+    position: center;
+    display: inline-block;
+    height: 25%;
+    width: 25%;
+}
+ .bottomArea{
+     height: 75%;
+ }
+.gameInfoArea{
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 15%;
+    background-color: #ffffff69;
+}
+.gameInfoArea > div{
+    height: 25%;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+}
+.gamesPlayed{
+    font-family: monospace;
+    font-weight: bold;
+}
+.accuracy{
+    font-family: monospace;
+    font-weight: bold;
+}
+.attempts{
+    font-family: monospace;
+    font-weight: bold;
+}
+.gameArea{
+    height: 100%;
+    width: 84%;
+    display: inline-block;
+}
+.cardContainer{
+    width: 16.66%;
+    float: left;
+    height: 33.33%;
+    margin: auto;
+    display: flex;
+}
+.card{
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
+    position: relative;
+}
+.front, .back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.front{
+
+}
+.back{
+    background-image: url("images/back.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.hide {
+    display: none;
+}
+.imageMod{
+    width:85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.resetButton {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    font-family: monospace;
+}
+.resetButton:hover {
+    background-color: #3e8e41
+}
+.resetButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.me{
+    height: 10%;
+    width: 10%;
+}
+h2,h3,.aboutMe,.aboutGame{
+    background-color: #ffffffb0;
+    max-width: 850px;
+}
