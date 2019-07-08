@@ -22,6 +22,8 @@ body{
     height: 100%;
     width: 15%;
     background-color: #ffffff69;
+    font-family: monospace;
+    font-weight: bold;
 }
 .gameInfoArea > div{
     height: 25%;
@@ -29,18 +31,11 @@ body{
     font-size: 120%;
     font-weight: bold;
 }
-.gamesPlayed{
-    font-family: monospace;
-    font-weight: bold;
+.accuracy, .attempts, .gamesPlayed{
+   font-family: monospace;
+   font-weight: bold;
 }
-.accuracy{
-    font-family: monospace;
-    font-weight: bold;
-}
-.attempts{
-    font-family: monospace;
-    font-weight: bold;
-}
+
 .gameArea{
     height: 100%;
     width: 84%;
@@ -60,28 +55,23 @@ body{
     width: 90%;
     position: relative;
 }
-.front, .back{
+.front, .back, .imageMod{
     height: 100%;
     width: 100%;
     position: absolute;
+    border-radius: 8px;
 }
-.front{
 
-}
-.back{
-    background-image: url("images/back.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.hide {
-    display: none;
-}
 .imageMod{
-    width:85%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+.hide {
+    display: none;
+}
+
 .resetButton {
     display: inline-block;
     padding: 5px 5px;
