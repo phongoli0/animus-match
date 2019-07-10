@@ -47,12 +47,16 @@ function randomizeAndGenerateCards() {
     var container = $("<div>").addClass("cardContainer");
     var card = $("<div>").addClass("card");
     var front = $("<div>").addClass("front");
-    var back = $('<img src="images/back.jpg">').addClass("back");
-    var image = $("<img>")
-      .addClass("imageMod")
-      .attr("src", "images/" + doubleImages[i]);
-    front.append(image);
-    card.append(front, back);
+    var frontImage = $("<img>")
+        .addClass("imageMod")
+        .attr("src", "images/" + doubleImages[i]);
+    var back = $('<div>')
+        .addClass("back");
+    var backImage = $('<img src="images/back.jpg">')
+        .addClass("imageMod");
+    front.append(frontImage);
+    back.append(backImage);
+    card.append(back, front);
     container.append(card);
     $(".gameArea").append(container);
   }
@@ -64,12 +68,11 @@ function cardClicked() {
   }
   if (first_card_clicked === null) {
     first_card_clicked = $(this);
-    first_card_clicked.find(".back").addClass("hide");
-    console.log(first_card_clicked);
+    first_card_clicked.parent().addClass("click");
     return;
   } else {
     second_card_clicked = $(this);
-    second_card_clicked.find(".back").addClass("hide");
+    second_card_clicked.parent().addClass("click");
     var first_card_src = first_card_clicked.find(".front img").attr("src");
     var second_card_src = second_card_clicked.find(".front img").attr("src");
     if (first_card_src === second_card_src) {
@@ -94,8 +97,8 @@ function cardClicked() {
 }
 
 function hideBothCards() {
-  first_card_clicked.find(".back").removeClass("hide");
-  second_card_clicked.find(".back").removeClass("hide");
+  first_card_clicked.parent().removeClass("click");
+  second_card_clicked.parent().removeClass("click");
   first_card_clicked = null;
   second_card_clicked = null;
   can_click_card = true;

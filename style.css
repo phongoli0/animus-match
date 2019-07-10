@@ -4,9 +4,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-/* .header{
-    height: 20%;
-} */
 .zoom{
     position: center;
     display: inline-block;
@@ -43,35 +40,38 @@ body{
     display: inline-block;
 }
 .cardContainer{
+    height: 33.33%;
     width: 16.66%;
     float: left;
-    height: 33.33%;
-    margin: auto;
-    display: flex;
+    perspective: 1000px;
 }
-.card{
+.cardContainer .card{
     top: 5%;
     left: 5%;
     height: 90%;
     width: 90%;
     position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
 }
-.front, .back, .imageMod{
+.cardContainer.click .card {
+    transform: rotateY(180deg);
+}
+.front, .back{
     height: 100%;
     width: 100%;
     position: absolute;
     border-radius: 8px;
+    backface-visibility: hidden;
 }
-
 .imageMod{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+   max-width: 100%;
+   border-radius: 8px;
+}
+.front{
+    transform: rotateY(180deg);
 }
 
-.hide {
-    display: none;
-}
 
 .resetButton {
     display: inline-block;
@@ -95,12 +95,4 @@ body{
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-}
-.me{
-    height: 10%;
-    width: 10%;
-}
-h2,h3,.aboutMe,.aboutGame{
-    background-color: #ffffffb0;
-    max-width: 850px;
 }
