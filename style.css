@@ -1,15 +1,20 @@
 body{
     height: 100vh;
     background-image: url("images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat;
 }
-.zoom{
-    position: center;
-    display: inline-block;
-    height: 25%;
-    width: 25%;
-    padding: .5em
+.header{
+    display: flex;
+    height: 20%
+}
+.logo{
+    width:20%;
+    height: 100%;
+    background-image: url("images/logo.png");
+    background-size: contain;
+}
+.banner{
+
 }
  .bottomArea{
      height: 75%;
@@ -17,28 +22,31 @@ body{
 .gameInfoArea{
     vertical-align: top;
     display: inline-block;
-    height: 100%;
-    width: 15%;
+    height: 97%;
+    width: 13%;
     background-color: #ffffff69;
     font-family: monospace;
     font-weight: bold;
+    margin-top: .5%;
+    border-radius: 8px;
 }
 .gameInfoArea > div{
     height: 25%;
     text-align: center;
-    font-size: 120%;
-    font-weight: bold;
 }
 .accuracy, .attempts, .gamesPlayed{
    font-family: monospace;
    font-weight: bold;
+   font-size: 120%;
 }
 
 .gameArea{
     height: 100%;
-    width: 84%;
+    width: 85%;
     display: inline-block;
 }
+
+
 .cardContainer{
     height: 33.33%;
     width: 16.66%;
@@ -48,8 +56,8 @@ body{
 .cardContainer .card{
     top: 5%;
     left: 5%;
-    height: 90%;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -64,10 +72,7 @@ body{
     border-radius: 8px;
     backface-visibility: hidden;
 }
-.imageMod{
-   max-width: 100%;
-   border-radius: 8px;
-}
+
 .front{
     transform: rotateY(180deg);
 }

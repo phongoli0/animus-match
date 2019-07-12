@@ -46,16 +46,11 @@ function randomizeAndGenerateCards() {
   for (var i = 0; i < doubleImages.length; i++) {
     var container = $("<div>").addClass("cardContainer");
     var card = $("<div>").addClass("card");
-    var front = $("<div>").addClass("front");
-    var frontImage = $("<img>")
-        .addClass("imageMod")
+    var front = $("<img>")
+        .addClass("front")
         .attr("src", "images/" + doubleImages[i]);
-    var back = $('<div>')
+    var back = $('<img src="images/back.jpg">')
         .addClass("back");
-    var backImage = $('<img src="images/back.jpg">')
-        .addClass("imageMod");
-    front.append(frontImage);
-    back.append(backImage);
     card.append(back, front);
     container.append(card);
     $(".gameArea").append(container);
