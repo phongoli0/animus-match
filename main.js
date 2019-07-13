@@ -68,8 +68,8 @@ function cardClicked() {
   } else {
     second_card_clicked = $(this);
     second_card_clicked.parent().addClass("click");
-    var first_card_src = first_card_clicked.find(".front img").attr("src");
-    var second_card_src = second_card_clicked.find(".front img").attr("src");
+    var first_card_src = first_card_clicked.find(".front").attr("src");
+    var second_card_src = second_card_clicked.find(".front").attr("src");
     if (first_card_src === second_card_src) {
       match_counter++;
       attempts++;

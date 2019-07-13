@@ -5,29 +5,33 @@ body{
 }
 .header{
     display: flex;
-    height: 20%
+    height: 25%
 }
 .logo{
-    width:20%;
-    height: 100%;
+    width: 15%;
     background-image: url("images/logo.png");
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .banner{
-
+    width: 85%;
+    background-image: url("images/banner7.jpg");
+    background-size: cover;
+    border-radius: 8px;
 }
  .bottomArea{
      height: 75%;
+    padding: .5rem;
  }
 .gameInfoArea{
     vertical-align: top;
     display: inline-block;
     height: 97%;
-    width: 13%;
+    width: 15%;
     background-color: #ffffff69;
     font-family: monospace;
     font-weight: bold;
-    margin-top: .5%;
     border-radius: 8px;
 }
 .gameInfoArea > div{
@@ -42,22 +46,21 @@ body{
 
 .gameArea{
     height: 100%;
-    width: 85%;
+    width: 84.5%;
     display: inline-block;
 }
 
 
 .cardContainer{
     height: 33.33%;
-    width: 16.66%;
+    width: 16%;
     float: left;
     perspective: 1000px;
+    padding: .2rem;
 }
 .cardContainer .card{
-    top: 5%;
-    left: 5%;
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -72,7 +75,6 @@ body{
     border-radius: 8px;
     backface-visibility: hidden;
 }
-
 .front{
     transform: rotateY(180deg);
 }
