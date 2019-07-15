@@ -27,6 +27,24 @@ function initializeApp() {
   $(".resetButton").click(resetGame);
 }
 
+
+function pickSound() {
+  var player = new Audio("audio/hidden-blade.mp3");
+  player.play();
+}
+function wrongSound() {
+  var player = new Audio("audio/ac-dmg.mp3");
+  player.play();
+}
+function matchSound() {
+  var player = new Audio("audio/respawn.mp3");
+  player.play();
+}
+function resetSound() {
+  var player = new Audio("audio/eagle.mp3");
+  player.play();
+}
+
 function shuffle(array) {
   var currentIndex = array.length;
   var temporaryValue;
@@ -62,18 +80,22 @@ function cardClicked() {
     return;
   }
   if (first_card_clicked === null) {
+    open();
     first_card_clicked = $(this);
     first_card_clicked.parent().addClass("click");
+    pickSound();
     return;
   } else {
     second_card_clicked = $(this);
     second_card_clicked.parent().addClass("click");
+    pickSound();
     var first_card_src = first_card_clicked.find(".front").attr("src");
     var second_card_src = second_card_clicked.find(".front").attr("src");
     if (first_card_src === second_card_src) {
       match_counter++;
       attempts++;
       displayStats();
+      matchSound();
       accuracy = match_counter / attempts;
       if (match_counter === total_possible_matches) {
         alert("you won");
@@ -92,6 +114,7 @@ function cardClicked() {
 }
 
 function hideBothCards() {
+  wrongSound();
   first_card_clicked.parent().removeClass("click");
   second_card_clicked.parent().removeClass("click");
   first_card_clicked = null;
@@ -113,6 +136,7 @@ function resetStats() {
 }
 
 function resetGame() {
+  resetSound();
   gamesPlayed++;
   resetStats();
   $(".gameArea").empty();
@@ -120,3 +144,4 @@ function resetGame() {
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
 }
+
