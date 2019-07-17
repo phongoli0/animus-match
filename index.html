@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Memory Match</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="header">
-      <div class="logo"></div>
-      <div class="banner"></div>
-    </div>
-    <div class="bottomArea">
-      <div class="gameInfoArea">
-        <div class="gamesPlayed">
-          Games Played
-          <div id="gamesPlayed">0</div>
-        </div>
-        <div class="attempts">
-          Attempts
-          <div id="attempts">0</div>
-        </div>
-        <div class="accuracy">
-          Accuracy
-          <div id="accuracy">0.00%</div>
-        </div>
-        <div class="reset">
-          <button class="resetButton">Reset</button>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Memory Match</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo"></div>
+    <div class="banner"></div>
+  </div>
+  <div class="bottomArea">
+    <div class="gameInfoArea">
+      <div class="gamesPlayed">
+        Games Played
+        <div id="gamesPlayed">0</div>
       </div>
-      <div class="gameArea"></div>
-    </div>
-    <button id="myBtn">Open Modal</button>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img src="images/win.gif " id="modal">
+      <div class="attempts">
+        Attempts
+        <div id="attempts">0</div>
+      </div>
+      <div class="accuracy">
+        Accuracy
+        <div id="accuracy">0.00%</div>
+      </div>
+      <div class="reset">
+        <button class="resetButton"></button>
       </div>
     </div>
-  </body>
+    <div class="gameArea"></div>
+  </div>
+  <button id="pause">Pause Music</button>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <img src="images/win.gif " class="modal-picture" />
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="overlay-content">
+      <img src="images/landscape.gif" />
+      <div>Rotate phone for best experience</div>
+    </div>
+  </div>
+</body>
+
 </html>

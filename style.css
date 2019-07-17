@@ -3,13 +3,6 @@ body {
   background-image: url("images/background.jpg");
   background-repeat: repeat;
 }
-@font-face {
-  font-family: "Assassin$ Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Assassin$ Regular"), url("Assassin$.woff") format("woff");
-}
-
 .header {
   display: flex;
   height: 20%;
@@ -23,7 +16,7 @@ body {
   background-position: center;
 }
 .banner {
-  width: 82%;
+  width: 83.5%;
   background-image: url("images/banner.jpg");
   background-size: cover;
   border-radius: 8px;
@@ -45,6 +38,9 @@ body {
 .gameInfoArea > div {
   height: 24.5%;
   text-align: center;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
 }
 .gamesPlayed {
   padding-top: 0.5em;
@@ -57,8 +53,8 @@ body {
   padding-left: 0.35em;
 }
 .cardContainer {
-  height: 33%;
-  width: 16%;
+  height: 33.3%;
+  width: 16.27%;
   float: left;
   perspective: 1000px;
   padding: 0 0.2em 0.2em 0;
@@ -72,7 +68,7 @@ body {
 .cardContainer.click .card {
   transform: rotateY(180deg);
 }
-.cardContainer:hover {
+.cardContainer:hover .vibrate{
   -webkit-animation: vibrate-1 0.5s linear infinite both;
   animation: vibrate-1 0.5s linear infinite both;
 }
@@ -89,6 +85,7 @@ body {
 
 .reset {
   padding-top: 1em;
+  font-size: 16px;
 }
 .resetButton {
   display: inline-block;
@@ -102,14 +99,21 @@ body {
   background-color: red;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 9px #999;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  background: url("images/button1.png");
+  height: 50%;
+  width: 36%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .resetButton:hover {
-  background-color: #3e8e41;
+  background-image: url("images/button3.png")
 }
 .resetButton:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  background-image: url("images/button2.png");
   transform: translateY(4px);
 }
 
@@ -199,34 +203,51 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    height: 100%;
+    width: 100%;
   }
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    background-color: rgba(0,0,0,0.4);
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-    height: 50%
+    height: 50%;
   }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  .modal-picture{
+      height: 100%;
+      width: 100%;
+  } 
+  .overlay{
+      display: none;
   }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  #pause{
+    margin-top: 3em;
+    margin-left: 5em;
   }
 
-  #modal{
-      height: 75%;
-      width: 75%
-  }
+@media (orientation: portrait) {
+.overlay{
+    display: flex;
+    background: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+
+}
+.overlay-content{
+    color: #fff;
+    text-align: center;
+    font-size: 55px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+}
