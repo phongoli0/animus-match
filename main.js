@@ -2,7 +2,7 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 9;
+var total_possible_matches = 1;
 var match_counter = 0;
 var can_click_card = true;
 var images = [
@@ -98,12 +98,11 @@ function cardClicked() {
     first_card_clicked = $(this);
     first_card_clicked.parent().addClass("click");
     pickSound();
-    openModal();
     return;
   } else {
     second_card_clicked = $(this);
-    can_click_card = false;
     second_card_clicked.parent().addClass("click");
+    can_click_card = false;
     pickSound();
     var first_card_src = first_card_clicked.find(".front").attr("src");
     var second_card_src = second_card_clicked.find(".front").attr("src");
