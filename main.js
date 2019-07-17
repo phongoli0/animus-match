@@ -25,9 +25,20 @@ function initializeApp() {
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
   $(".resetButton").click(resetGame);
+  themeSong();
+  winModal();
 }
 
-
+function themeSong() {
+  var player = new Audio("audio/theme-song.mp3");
+  var pauseButton = document.getElementById("pause");
+  player.play();
+  player.loop = true;
+  player.volume = .6;
+  pauseButton.onclick = function() {
+    player.pause();
+  }
+}
 function pickSound() {
   var player = new Audio("audio/hidden-blade.mp3");
   player.play();
@@ -41,6 +52,10 @@ function matchSound() {
   player.play();
 }
 function resetSound() {
+  var player = new Audio("audio/eagle.mp3");
+  player.play();
+}
+function winSound(){
   var player = new Audio("audio/eagle.mp3");
   player.play();
 }
@@ -68,7 +83,7 @@ function randomizeAndGenerateCards() {
         .addClass("front")
         .attr("src", "images/" + doubleImages[i]);
     var back = $('<img src="images/back.jpg">')
-        .addClass("back");
+        .addClass("back vibrate");
     card.append(back, front);
     container.append(card);
     $(".gameArea").append(container);
@@ -76,38 +91,43 @@ function randomizeAndGenerateCards() {
 }
 
 function cardClicked() {
-  if (can_click_card === false) {
+  if (can_click_card === false || $(this).parent().hasClass("click")) {
     return;
   }
   if (first_card_clicked === null) {
-    open();
     first_card_clicked = $(this);
     first_card_clicked.parent().addClass("click");
     pickSound();
+    openModal();
     return;
   } else {
     second_card_clicked = $(this);
+    can_click_card = false;
     second_card_clicked.parent().addClass("click");
     pickSound();
     var first_card_src = first_card_clicked.find(".front").attr("src");
     var second_card_src = second_card_clicked.find(".front").attr("src");
     if (first_card_src === second_card_src) {
+      can_click_card = false;
       match_counter++;
       attempts++;
       displayStats();
       matchSound();
+      can_click_card = true;
       accuracy = match_counter / attempts;
       if (match_counter === total_possible_matches) {
-        alert("you won");
+        can_click_card = false;
+        openModal();
+        winSound();
       }
       first_card_clicked = null;
       second_card_clicked = null;
       return;
     } else {
+      can_click_card = false;
       attempts++;
       displayStats();
       accuracy = match_counter / attempts;
-      can_click_card = false;
       setTimeout(hideBothCards, 1000);
     }
   }
@@ -125,7 +145,7 @@ function hideBothCards() {
 function displayStats() {
   $("#gamesPlayed").text(gamesPlayed);
   $("#attempts").text(attempts);
-  $("#accuracy").text(accuracy.toFixed(2) + "%");
+  $("#accuracy").text((accuracy*100).toFixed(2) + "%");
 }
 
 function resetStats() {
@@ -136,12 +156,23 @@ function resetStats() {
 }
 
 function resetGame() {
-  resetSound();
   gamesPlayed++;
   resetStats();
   $(".gameArea").empty();
   shuffle(images);
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
+}
+
+function winModal() {
+  var modal = document.getElementById("myModal");
+  openModal = function() {
+    modal.style.display = "block";
+  };
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 }
 
