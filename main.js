@@ -19,6 +19,7 @@ var images = [
 var attempts = 0;
 var accuracy = 0;
 var gamesPlayed = 0;
+let soundIsOn = true;
 
 function initializeApp() {
   shuffle(images);
@@ -30,34 +31,54 @@ function initializeApp() {
 }
 
 function themeSong() {
+  console.log(soundIsOn);
   var player = new Audio("audio/theme-song.mp3");
   var pauseButton = document.getElementById("pause");
   player.play();
   player.loop = true;
-  player.volume = .6;
+  player.volume = 0.6;
   pauseButton.onclick = function() {
-    player.pause();
+    if (soundIsOn === true) {
+      player.pause();
+      soundIsOn = false;
+      $(this).removeClass("fas fa-volume-up").addClass("fas fa-volume-mute");
+    } else {
+      player.play();
+      soundIsOn = true;
+      $(this).removeClass("fas fa-volume-mute").addClass("fas fa-volume-up");
+    }
+  };
+}
+
+function pickSound() {
+  if (soundIsOn === true) {
+    var player = new Audio("audio/hidden-blade.mp3");
+    player.play();
   }
 }
-function pickSound() {
-  var player = new Audio("audio/hidden-blade.mp3");
-  player.play();
-}
 function wrongSound() {
-  var player = new Audio("audio/ac-dmg.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/ac-dmg.mp3");
+    player.play();
+  }
 }
 function matchSound() {
-  var player = new Audio("audio/respawn.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/respawn.mp3");
+    player.play();
+  }
 }
 function resetSound() {
-  var player = new Audio("audio/eagle.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/eagle.mp3");
+    player.play();
+  }
 }
-function winSound(){
-  var player = new Audio("audio/eagle.mp3");
-  player.play();
+function winSound() {
+  if (soundIsOn === true) {
+    var player = new Audio("audio/eagle.mp3");
+    player.play();
+  }
 }
 
 function shuffle(array) {

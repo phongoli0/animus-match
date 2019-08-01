@@ -8,6 +8,7 @@
   <script src="main.js"></script>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 
 <body>
@@ -18,25 +19,27 @@
   <div class="bottomArea">
     <div class="gameInfoArea">
       <div class="gamesPlayed">
-        Games Played
+        GameS PlayeD
         <div id="gamesPlayed">0</div>
       </div>
       <div class="attempts">
-        Attempts
+        AttemptS
         <div id="attempts">0</div>
       </div>
       <div class="accuracy">
-        Accuracy
+        AccuracY
         <div id="accuracy">0.00%</div>
       </div>
-      <div class="reset">
+      <div class="reset" id="reset">
         <button class="resetButton"></button>
-        <div>Reset Game</div>
+        <div>ReseT GamE</div>
+      </div>
+      <div>
+        <div class="sound fas fa-volume-up" id="pause"></div>
       </div>
     </div>
     <div class="gameArea"></div>
   </div>
-  <button id="pause">Pause Music</button>
   <div id="myModal" class="modal">
     <div class="modal-content">
       <img src="images/win.gif " class="modal-picture" />
