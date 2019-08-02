@@ -1,115 +1,434 @@
-body{
-    height: 100vh;
-    background-image: url("images/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+  height: 100vh;
+  background-image: url("images/background.jpg");
+  background-repeat: repeat;
 }
-.header{
-    height: 20%;
+
+.header {
+  display: flex;
+  height: 15%;
+  padding-bottom: 0.5%;
 }
-.zoom{
-    position: center;
-    display: inline-block;
-    height: 25%;
-    width: 25%;
+
+.logo {
+  width: 15%;
+  background-image: url("images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
- .bottomArea{
-     height: 75%;
- }
-.gameInfoArea{
-    vertical-align: top;
-    display: inline-block;
-    height: 100%;
-    width: 15%;
-    background-color: #ffffff69;
+
+.banner {
+  width: 83.25%;
+  background-image: url("images/banner.jpg");
+  background-size: cover;
+  border-radius: 8px;
+  margin-left: 0.75%;
 }
-.gameInfoArea > div{
-    height: 25%;
-    text-align: center;
-    font-size: 120%;
-    font-weight: bold;
+
+.bottomArea {
+  height: 80%;
 }
-.gamesPlayed{
-    font-family: monospace;
-    font-weight: bold;
+
+.gameInfoArea {
+  vertical-align: top;
+  display: inline-block;
+  height: 101.8%;
+  width: 15%;
+  background-color: #ffffff69;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
 }
-.accuracy{
-    font-family: monospace;
-    font-weight: bold;
+
+.gameInfoArea > div {
+  height: 20%;
 }
-.attempts{
-    font-family: monospace;
-    font-weight: bold;
+
+.gamesPlayed {
+  padding-top: 5%;
 }
-.gameArea{
-    height: 100%;
-    width: 84%;
-    display: inline-block;
+
+.gameArea {
+  height: 100%;
+  width: 84%;
+  display: inline-block;
+  margin-left: 0.5%;
 }
-.cardContainer{
-    width: 16.66%;
-    float: left;
-    height: 33.33%;
-    margin: auto;
+
+.cardContainer {
+  height: 33%;
+  width: 16.15%;
+  float: left;
+  perspective: 1000px;
+  margin-right: 0.5%;
+  margin-bottom: 0.5%;
+  cursor: pointer;
+}
+
+.cardContainer .card {
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.cardContainer.click .card {
+  transform: rotateY(180deg);
+}
+
+.cardContainer:hover .vibrate {
+  -webkit-animation: vibrate-1 0.5s linear infinite both;
+  animation: vibrate-1 0.5s linear infinite both;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.resetButton {
+  display: inline-block;
+  cursor: pointer;
+  background: url("images/button1.png");
+  height: 50%;
+  width: 50%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+}
+
+.resetButton:hover {
+  background-image: url("images/button3.png");
+}
+
+.resetButton:active {
+  background-image: url("images/button2.png");
+  transform: translateY(4px);
+}
+
+.soundButton {
+  font-size: 1.5em;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 15% auto;
+  width: 50%;
+  height: 50%;
+}
+
+.modal-picture {
+  height: 100%;
+  width: 100%;
+}
+
+.overlay {
+  display: none;
+}
+
+@media only screen and (device-min-width: 1080px) {
+  @-webkit-keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+
+    60% {
+      -webkit-transform: translate(2px, 2px);
+      transform: translate(2px, 2px);
+    }
+
+    80% {
+      -webkit-transform: translate(2px, -2px);
+      transform: translate(2px, -2px);
+    }
+
+    100% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+  }
+
+  @keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+
+    60% {
+      -webkit-transform: translate(2px, 2px);
+      transform: translate(2px, 2px);
+    }
+
+    80% {
+      -webkit-transform: translate(2px, -2px);
+      transform: translate(2px, -2px);
+    }
+
+    100% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-7-15 11:57:58
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation vibrate-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@media (orientation: portrait) {
+  .overlay {
     display: flex;
+    background: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  .overlay-content {
+    color: #fff;
+    text-align: center;
+    font-size: 55px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+  }
 }
-.card{
-    top: 5%;
-    left: 5%;
+
+@media only screen and (device-width: 1024px){
+  .header {
+    height: 10%;
+    margin-bottom: .5%;
+  }
+
+  .banner {
+    width: 84.5%;
+  }
+
+  .bottomArea {
     height: 90%;
-    width: 90%;
-    position: relative;
-}
-.front, .back{
+  }
+
+  .gameInfoArea {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    font-size: 16px;
+    order: 2;
+    justify-content: space-around;
+    margin-bottom: 1%;
+    padding-top: 0.5%;
+  }
+
+  .gamesPlayed {
+    padding: 0;
+  }
+
+  .gameArea {
+    width: 100%;
+    height: 85%;
+    margin: 0;
+  }
+
+  .cardContainer{
+    height: 32%;
+    width: 16.16%;
+  }
+  .reset {
+    padding: 0;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .resetButton {
     height: 100%;
     width: 100%;
-    position: absolute;
-}
-.front{
+  }
 
+  #reset {
+    height: 55%;
+  }
 }
-.back{
-    background-image: url("images/back.jpg");
-    background-size: cover;
-    background-position: center;
-}
-.hide {
-    display: none;
-}
-.imageMod{
-    width:85%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.resetButton {
-    display: inline-block;
-    padding: 5px 5px;
-    font-size: 18px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: red;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    font-family: monospace;
-}
-.resetButton:hover {
-    background-color: #3e8e41
-}
-.resetButton:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-.me{
+
+@media only screen and (device-width: 1366px){
+  .header {
     height: 10%;
-    width: 10%;
-}
-h2,h3,.aboutMe,.aboutGame{
-    background-color: #ffffffb0;
-    max-width: 850px;
+    margin-bottom: .5%;
+  }
+
+  .banner {
+    width: 84.5%;
+  }
+
+  .bottomArea {
+    height: 90%;
+  }
+
+  .gameInfoArea {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    font-size: 16px;
+    order: 2;
+    justify-content: space-around;
+    margin-bottom: 1%;
+    padding-top: 0.5%;
+  }
+
+  .gamesPlayed {
+    padding: 0;
+  }
+
+  .gameArea {
+    width: 100%;
+    height: 85%;
+    margin: 0;
+  }
+
+  .cardContainer{
+    height: 32%;
+    width: 16.16%;
+  }
+  .reset {
+    padding: 0;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .resetButton {
+    height: 100%;
+    width: 100%;
+  }
+
+  #reset {
+    height: 55%;
+  }
 }

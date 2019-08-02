@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Memory Match</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Memory Match</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
+
 <body>
-<div class="header">
-    <div class="logo">
-        <a href="about.html">
-            <img src="images/zoom.png" class="zoom">
-        </a>
-    </div>
-</div>
-<div class="bottomArea">
+  <div class="header">
+    <div class="logo"></div>
+    <div class="banner"></div>
+  </div>
+  <div class="bottomArea">
     <div class="gameInfoArea">
-        <div class="gamesPlayed">Games Played
-            <div id="gamesPlayed"></div>
-        </div>
-        <div class="attempts">Attempts
-            <div id="attempts"></div>
-        </div>
-        <div class="accuracy">Accuracy
-            <div id="accuracy"></div>
-        </div>
-        <div>
-            <button class="resetButton">Reset</button>
-        </div>
+      <div class="gamesPlayed">
+        GameS PlayeD
+        <div id="gamesPlayed">0</div>
+      </div>
+      <div class="attempts">
+        AttemptS
+        <div id="attempts">0</div>
+      </div>
+      <div class="accuracy">
+        AccuracY
+        <div id="accuracy">0.00%</div>
+      </div>
+      <div class="reset" id="reset">
+        <div>ReseT GamE</div>
+        <div class="resetButton"></div>
+      </div>
+      <div class="sound">
+        <div>SounD On/Off</div>
+        <div class="soundButton fas fa-volume-up" id="pause"></div>
+      </div>
     </div>
-    <div class="gameArea">
+    <div class="gameArea"></div>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <img src="images/win.gif " class="modal-picture" />
     </div>
-</div>
+  </div>
+  <div class="overlay">
+    <div class="overlay-content">
+      <img src="images/landscape.gif" />
+      <div>Rotate phone for best experiencE</div>
+    </div>
+  </div>
 </body>
+
 </html>
