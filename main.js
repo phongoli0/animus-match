@@ -2,7 +2,7 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 1;
+var total_possible_matches = 9;
 var match_counter = 0;
 var can_click_card = true;
 var images = [
@@ -31,7 +31,6 @@ function initializeApp() {
 }
 
 function themeSong() {
-  console.log(soundIsOn);
   var player = new Audio("audio/theme-song.mp3");
   var pauseButton = document.getElementById("pause");
   player.play();
@@ -136,7 +135,6 @@ function cardClicked() {
       can_click_card = true;
       accuracy = match_counter / attempts;
       if (match_counter === total_possible_matches) {
-        can_click_card = false;
         openModal();
         winSound();
       }
@@ -182,6 +180,7 @@ function resetGame() {
   shuffle(images);
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
+  can_click_card = true;
 }
 
 function winModal() {
