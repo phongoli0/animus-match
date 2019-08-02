@@ -2,7 +2,7 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 1;
+var total_possible_matches = 9;
 var match_counter = 0;
 var can_click_card = true;
 var images = [
@@ -19,6 +19,7 @@ var images = [
 var attempts = 0;
 var accuracy = 0;
 var gamesPlayed = 0;
+let soundIsOn = true;
 
 function initializeApp() {
   shuffle(images);
@@ -34,30 +35,49 @@ function themeSong() {
   var pauseButton = document.getElementById("pause");
   player.play();
   player.loop = true;
-  player.volume = .6;
+  player.volume = 0.6;
   pauseButton.onclick = function() {
-    player.pause();
+    if (soundIsOn === true) {
+      player.pause();
+      soundIsOn = false;
+      $(this).removeClass("fas fa-volume-up").addClass("fas fa-volume-mute");
+    } else {
+      player.play();
+      soundIsOn = true;
+      $(this).removeClass("fas fa-volume-mute").addClass("fas fa-volume-up");
+    }
+  };
+}
+
+function pickSound() {
+  if (soundIsOn === true) {
+    var player = new Audio("audio/hidden-blade.mp3");
+    player.play();
   }
 }
-function pickSound() {
-  var player = new Audio("audio/hidden-blade.mp3");
-  player.play();
-}
 function wrongSound() {
-  var player = new Audio("audio/ac-dmg.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/ac-dmg.mp3");
+    player.play();
+  }
 }
 function matchSound() {
-  var player = new Audio("audio/respawn.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/respawn.mp3");
+    player.play();
+  }
 }
 function resetSound() {
-  var player = new Audio("audio/eagle.mp3");
-  player.play();
+  if (soundIsOn === true) {
+    var player = new Audio("audio/eagle.mp3");
+    player.play();
+  }
 }
-function winSound(){
-  var player = new Audio("audio/eagle.mp3");
-  player.play();
+function winSound() {
+  if (soundIsOn === true) {
+    var player = new Audio("audio/eagle.mp3");
+    player.play();
+  }
 }
 
 function shuffle(array) {
@@ -115,7 +135,6 @@ function cardClicked() {
       can_click_card = true;
       accuracy = match_counter / attempts;
       if (match_counter === total_possible_matches) {
-        can_click_card = false;
         openModal();
         winSound();
       }
@@ -161,6 +180,7 @@ function resetGame() {
   shuffle(images);
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
+  can_click_card = true;
 }
 
 function winModal() {
