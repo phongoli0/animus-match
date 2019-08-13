@@ -1,17 +1,29 @@
-# Memory Match
+# Animus Match
+* Live Demo: __https://phongtruong.com/animus-match__
 
-## Overview
+![](animus-match-demo.gif)
+<hr/>
+You are a direct descendant of Ezio and have been kidnapped by Abstergo. You must sync your memories of other assassins to unlock your innate abilities and free yourself.
 
-> Memory match is a game with 18 cards face down and the player has to try and match all 9 pairs of matching cards by remembering the position of the cards.
-Once the player has match 2 cards they will be displayed face up until all pairs have been matched. Once all pairs have been matched the user will be
-displayed a message that they have won the game. As the user clicks through the cards stats will be kept letting the user know how many attempts and the
-accuracy of their choices.
+## Getting Started
+### Initial Setup
+1. Fork this repo and clone your fork from the terminal.
+```
+$ git clone https://github.com/[user_name]/memory_match.git
+```
+2. Navigate to and open the ```/memory_match``` directory.
+3. Open the ```index.html``` file and enjoy! 😃
 
-> <a href="https://docs.google.com/presentation/d/1zlSHYatpaPsrq4LuOtyuE-RRIom4vRo-lXovQ0zPV0U/pub?start=false&loop=false&delayms=3000" target="_blank">Design Overview</a>
+## Contributing
+Please feel free to fork this repo, make changes, submit pull requests, and send suggestions to ptruong6@outlook.com to make this app better.
 
-> <a href="https://drive.google.com/open?id=0B3R9g7F9YRS6SHd3Q3lRdWF0RkU" target="_blank">Flow Document</a>
+## Built With
+* [JavaScript](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+* [jQuery](https://jquery.com/)
+* HTML
+* CSS
 
-> ### Versions
-> - Version 1.0 (v1.0) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version1.0">View Details</a>
-> - Version 0.5 (v0.5) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version0.5">View Details</a>
-> - Version 0.1 (v0.1) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version0.1">View Details</a>
+## License
+[MIT License](https://opensource.org/licenses/mit-license.php)
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
