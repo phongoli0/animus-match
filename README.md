@@ -3,7 +3,7 @@
 
 ![](animus-match-demo.gif)
 <hr/>
-You are a direct descendant of Ezio and have been kidnapped by Abstergo. You must sync your memories of other assassins to unlock your innate abilities and free yourself.
+You are a direct descendant of Ezio and have been kidnapped by Abstergo. You must sync your memories of other assassins to unlock your innate abilities and free yourself.<br>
 Animus Match is a card matching game with randomly generated cards and live stats tracking. 
 
 ## Getting Started
