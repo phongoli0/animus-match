@@ -4,12 +4,13 @@
 ![](animus-match-demo.gif)
 <hr/>
 You are a direct descendant of Ezio and have been kidnapped by Abstergo. You must sync your memories of other assassins to unlock your innate abilities and free yourself.
+Animus Match is a card matching game with randomly generated cards and live stat tracking. 
 
 ## Getting Started
 ### Initial Setup
 1. Fork this repo and clone your fork from the terminal.
 ```
-$ git clone https://github.com/[user_name]/memory_match.git
+$ git clone https://github.com/phongoli0/animus-match.git
 ```
 2. Navigate to and open the ```/memory_match``` directory.
 3. Open the ```index.html``` file and enjoy! 😃
