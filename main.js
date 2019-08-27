@@ -22,7 +22,6 @@ var gamesPlayed = 0;
 let soundIsOn = true;
 
 function initializeApp() {
-  shuffle(images);
   randomizeAndGenerateCards();
   $(".card").click(cardClicked);
   $(".resetButton").click(resetGame);
@@ -96,6 +95,7 @@ function shuffle(array) {
 
 function randomizeAndGenerateCards() {
   var doubleImages = images.concat(images);
+  shuffle(doubleImages);
   for (var i = 0; i < doubleImages.length; i++) {
     var container = $("<div>").addClass("cardContainer");
     var card = $("<div>").addClass("card");
@@ -135,8 +135,7 @@ function cardClicked() {
       can_click_card = true;
       accuracy = match_counter / attempts;
       if (match_counter === total_possible_matches) {
-        openModal();
-        winSound();
+        setTimeout(openModal, 2000)
       }
       first_card_clicked = null;
       second_card_clicked = null;
@@ -174,18 +173,21 @@ function resetStats() {
 }
 
 function resetGame() {
-  gamesPlayed++;
-  resetStats();
-  $(".gameArea").empty();
-  shuffle(images);
-  randomizeAndGenerateCards();
-  $(".card").click(cardClicked);
-  can_click_card = true;
+  if(attempts >= 1){
+    gamesPlayed++;
+    resetStats();
+    $(".gameArea").empty();
+    shuffle(images);
+    randomizeAndGenerateCards();
+    $(".card").click(cardClicked);
+    can_click_card = true;
+  }
 }
 
 function winModal() {
   var modal = document.getElementById("myModal");
   openModal = function() {
+    winSound();
     modal.style.display = "block";
   };
   window.onclick = function(event) {
